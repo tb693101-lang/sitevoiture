@@ -165,13 +165,13 @@ header {
 }
 
 .texte h2 {
-    color: #9f0300;
+    color: #0077cc;
     margin-bottom: 20px;
 }
 
 .texte p {
     line-height: 1.7;
-    color: #ffffff;
+    color: #555;
 }
 
 .image {
