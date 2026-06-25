@@ -28,7 +28,7 @@ body{
 .nav-links{
     display:flex;
     list-style:none;
-    gap:35px;
+    gap:40px;
 }
 
 .nav-links li{
@@ -54,7 +54,7 @@ body{
     transform:translateX(-50%) translateY(20px);
 
     width:90vw;
-    max-width:1200px;
+    max-width:650px;
     background:#202020;
     display:grid;
     grid-template-columns:repeat(4,1fr);
