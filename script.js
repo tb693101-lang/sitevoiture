@@ -6,9 +6,9 @@ burger.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 });
 
-dropdown.addEventListener("click", () => {
+dropdown.addEventListener("click", function (e) {
     if (window.innerWidth <= 900) {
+        e.preventDefault();
         dropdown.classList.toggle("mobile-open");
     }
 });
-const 
