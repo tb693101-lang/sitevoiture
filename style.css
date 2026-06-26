@@ -97,7 +97,7 @@ body{
 }
 
 /* MOBILE */
-@media (max-width: 900px){
+@media (max-width: 650px){
 
     .burger{
         display:block;
@@ -177,3 +177,17 @@ body{
     display: block;
 }
 
+/* État initial des éléments */
+
+.anim-scroll{
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Quand l'élément devient visible */
+
+.anim-scroll.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
