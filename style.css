@@ -12,14 +12,14 @@ body {
 
 /* ===== HEADER ===== */
 header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    width: 100%;
+    background: #1b1b1b;
+    border-bottom: 1px solid #333;
 }
 
 .navbar {
-    background: #1b1b1b;
     display: flex;
+    flex-wrap: wrap; /* IMPORTANT */
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
@@ -28,7 +28,7 @@ header {
 .logo {
     font-size: 28px;
     font-weight: bold;
-    color: #c9c9c9;
+    color: #d0d0d0;
 }
 
 /* ===== MENU DESKTOP ===== */
@@ -63,17 +63,18 @@ header {
 
     width: 90vw;
     max-width: 1200px;
-
     background: #202020;
-    padding: 35px;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 
+    padding: 35px;
+
     opacity: 0;
     visibility: hidden;
-    transition: 0.3s ease;
+    transition: 0.3s;
+    z-index: 999;
 }
 
 .column {
@@ -95,10 +96,13 @@ header {
     color: white;
 }
 
-.dropdown:hover .mega-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
+/* Hover desktop uniquement */
+@media (min-width: 901px) {
+    .dropdown:hover .mega-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
 }
 
 /* ===== BURGER ===== */
@@ -141,8 +145,8 @@ header {
 
 .image img {
     width: 100%;
-    display: block;
     border-radius: 8px;
+    display: block;
 }
 
 /* ===== MOBILE ===== */
@@ -153,18 +157,15 @@ header {
     }
 
     .nav-links {
-        position: absolute;
-        top: 75px;
-        left: -100%;
-        width: 100%;
-        background: #1b1b1b;
+        display: none;
         flex-direction: column;
+        width: 100%;
         gap: 0;
-        transition: 0.4s;
+        margin-top: 20px;
     }
 
     .nav-links.active {
-        left: 0;
+        display: flex;
     }
 
     .nav-links li {
@@ -172,13 +173,13 @@ header {
     }
 
     .nav-links a {
-        padding: 20px;
+        padding: 18px 20px;
         border-bottom: 1px solid #333;
     }
 
-    /* IMPORTANT */
     .mega-menu {
         position: static;
+        transform: none;
         width: 100%;
         max-width: none;
 
@@ -187,13 +188,12 @@ header {
 
         opacity: 1;
         visibility: visible;
-        transform: none;
 
-        padding: 15px;
+        padding: 20px;
         background: #252525;
     }
 
-    .dropdown.mobile-open .mega-menu {
+    .dropdown.mobile-open > .mega-menu {
         display: grid;
     }
 

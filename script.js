@@ -6,11 +6,19 @@ document.addEventListener("DOMContentLoaded", () => {
     burger.addEventListener("click", () => {
         navLinks.classList.toggle("active");
     });
+    const trigger = document.querySelector(".dropdown-trigger");
 
-    dropdown.addEventListener("click", (e) => {
-        if (window.innerWidth <= 900) {
-            e.preventDefault();
-            dropdown.classList.toggle("mobile-open");
+    trigger.addEventListener("click", (e) => {
+    if (window.innerWidth <= 900) {
+        e.preventDefault();
+        dropdown.classList.toggle("mobile-open");
+    }
+    });
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 900) {
+            navLinks.classList.remove("active");
+            dropdown.classList.remove("mobile-open");
         }
     });
 });
