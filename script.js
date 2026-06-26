@@ -39,3 +39,12 @@ function revealCards() {
 
 window.addEventListener("scroll", revealCards);
 window.addEventListener("load", revealCards);
+
+/* ===== Contact Form ===== */
+const form = document.querySelector(".contact-form");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Votre message a bien été envoyé !");
+    form.reset();
+});
