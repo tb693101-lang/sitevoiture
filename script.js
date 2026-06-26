@@ -22,3 +22,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+/* ===== Services Cards ===== */
+const cards = document.querySelectorAll(".card");
+
+function revealCards() {
+    cards.forEach(card => {
+        const top = card.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (top < windowHeight - 50) {
+            card.classList.add("show");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealCards);
+window.addEventListener("load", revealCards);
